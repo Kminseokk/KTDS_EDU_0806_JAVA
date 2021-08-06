@@ -1,27 +1,27 @@
 package java0806;
-import java.util.ArrayList; // »ç¿ëÇÒ Å¬·¡½º import
+import java.util.ArrayList; // ì‚¬ìš©í•  í´ë˜ìŠ¤ import
 //import java0806.Member; 
 
 public class MemberArrayList {
-	private ArrayList<Member> arrayList; // ArrayList ¼±¾ğ
+	private ArrayList<Member> arrayList; // ArrayList ì„ ì–¸
 	
 	public MemberArrayList(){
-		arrayList = new ArrayList<Member>(); //¸â¹ö·Î ¼±¾ğÇÑ ArrayList »ı¼º
+		arrayList = new ArrayList<Member>(); //ë©¤ë²„ë¡œ ì„ ì–¸í•œ ArrayList ìƒì„±
 	}
-	public void addMember(Member member){ //ArrayList ¿¡ ¸â¹ö Ãß°¡
+	public void addMember(Member member){ //ArrayList ì— ë©¤ë²„ ì¶”ê°€
 		arrayList.add(member);
 	}
 	
-	public boolean removeMember(int memberId){ // ¸â¹ö ¾ÆÀÌµğ¸¦ ¸Å°³º¯¼ö·Î, »èÁ¦ ¿©ºÎ¸¦ ¹İÈ¯
-		for(int i =0; i<arrayList.size(); i++){ // ÇØ´ç ¾ÆÀÌµğ¸¦ °¡Áø ¸â¹ö¸¦ ArrayList¿¡¼­ Ã£À½
+	public boolean removeMember(int memberId){ // ë©¤ë²„ ì•„ì´ë””ë¥¼ ë§¤ê°œë³€ìˆ˜ë¡œ, ì‚­ì œ ì—¬ë¶€ë¥¼ ë°˜í™˜
+		for(int i =0; i<arrayList.size(); i++){ // í•´ë‹¹ ì•„ì´ë””ë¥¼ ê°€ì§„ ë©¤ë²„ë¥¼ ArrayListì—ì„œ ì°¾ìŒ
 			Member member = arrayList.get(i);
 			int tempId = member.getMemberId();
-			if(tempId == memberId){ // ¸â¹ö ¾ÆÀÌµğ°¡ ¸Å°³º¯¼ö¿Í ÀÏÄ¡ÇÏ¸é
-				arrayList.remove(i); // ÇØ´ç ¸â¹ö¸¦ »èÁ¦
-				return true; // true ¹İÈ¯
+			if(tempId == memberId){ // ë©¤ë²„ ì•„ì´ë””ê°€ ë§¤ê°œë³€ìˆ˜ì™€ ì¼ì¹˜í•˜ë©´
+				arrayList.remove(i); // í•´ë‹¹ ë©¤ë²„ë¥¼ ì‚­ì œ
+				return true; // true ë°˜í™˜
 			}
 		}
-		System.out.println(memberId + "°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù"); //for °¡ ³¡³¯ ¶§ ±îÁö return ÀÌ ¾ÈµÈ °æ¿ì
+		System.out.println(memberId + "ê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤"); //for ê°€ ëë‚  ë•Œ ê¹Œì§€ return ì´ ì•ˆëœ ê²½ìš°
 		return false; 
 	}
 	
@@ -30,7 +30,16 @@ public class MemberArrayList {
 		
 	}
 	
-	public void showAllMember(){//ÀüÃ¼ È¸¿øÀ» Ãâ·Â
+// 	public void insertMember(Member member, int index) {   //ë§Œì•½ ì¸ë±ìŠ¤ ë²ˆí˜¸ë¥¼ ë„˜ì–´ê°„ ì¸ë±ìŠ¤ë¥¼ ë„£ì„ë•Œì˜ ì˜ˆì™¸ì²˜ë¦¬ëŠ” ë‹¤ìŒê³¼ ê°™ì´ ë„£ìœ¼ë©´ ëœë‹¤.
+// 		if(index < 0 || index > arrayList.size()) {
+// 			System.out.println(index + "ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+// 			return;
+// 		}
+// 		else
+// 			arrayList.add(index, member);
+// 	}	
+	
+	public void showAllMember(){//ì „ì²´ íšŒì›ì„ ì¶œë ¥
 		for(Member member : arrayList){
 			System.out.println(member);
 		}
